@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display URL Parameters</title>
+    <script type="text/javascript">
+        function sendCallbackToAndroidApp(param1, param2) {
+            let param = param1.concat(" ",param2);
+            if (window.AndroidInterface) {
+                window.AndroidInterface.receiveParams(param);
+            }
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,7 +46,10 @@
       // Handle button click
       function handleButtonClick() {
           const { param1, param2 } = getUrlParams();
-          alert(`Param1: ${param1}\nParam2: ${param2}`);
+          let param = param1.concat(" ",param2);
+          alert(`Param1: ${param}`);
+        //   alert(`Param1: ${param1}\nParam2: ${param2}`);
+          sendCallbackToAndroidApp(param1,param2)
       }
 
       // Initial setup
@@ -50,3 +61,5 @@
 
 </body>
 </html>
+
+<!-- https://chamodh98.github.io/TestSigleWeb?param1="122"&param2="442" -->
