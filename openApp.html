@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display URL Parameters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #displayText {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="displayText"></div>
+    <button id="actionButton">Click Me!</button>
+
+    <script>
+      // Function to get URL parameters
+      function getUrlParams() {
+          const params = new URLSearchParams(window.location.search);
+          const param1 = params.get('param1');
+          const param2 = params.get('param2');
+          return { param1, param2 };
+      }
+
+      // Display URL parameters
+      function displayParams() {
+          const { param1, param2 } = getUrlParams();
+          const displayText = document.getElementById('displayText');
+          displayText.innerHTML = `Param1: ${param1} <br> Param2: ${param2}`;
+      }
+
+      // Handle button click
+      function handleButtonClick() {
+          const { param1, param2 } = getUrlParams();
+          alert(`Param1: ${param1}\nParam2: ${param2}`);
+      }
+
+      // Initial setup
+      window.onload = function() {
+          displayParams();
+          document.getElementById('actionButton').onclick = handleButtonClick;
+      }
+  </script>
+
+</body>
+</html>
