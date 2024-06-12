@@ -16,7 +16,7 @@
             } else {
                 window.webkit.messageHandlers.callbackHandler.postMessage(param);
             }
-            console.log("sendCallbackToApp called with data:", data);
+            console.log("sendCallbackToApp called with data:", param);
             window.webkit.messageHandlers.callbackHandler.postMessage(param);
         }
     </script>
