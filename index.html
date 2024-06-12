@@ -14,10 +14,10 @@
                     window.AndroidInterface.receiveParams(param);
                 }
             } else {
-                window.webkit.messageHandlers.callbackHandler.postMessage(param);
+                // window.webkit.messageHandlers.callbackHandler.postMessage(param);
             }
             console.log("sendCallbackToApp called with data:", param);
-            window.webkit.messageHandlers.callbackHandler.postMessage(param);
+            // window.webkit.messageHandlers.callbackHandler.postMessage(param);
             window.webkit.messageHandlers.test.postMessage("Hello, world!");
         }
     </script>
@@ -36,7 +36,7 @@
     <div id="displayText"></div>
     <button id="actionButton">Click Me!</button>
     </br>
-    <label>iOS Change done - 4</label>
+    <label>iOS Change done - 5</label>
 
     <script>
       // Function to get URL parameters
