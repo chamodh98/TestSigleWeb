@@ -35,7 +35,7 @@
     <div id="displayText"></div>
     <button id="actionButton">Click Me!</button>
     </br>
-    <label>iOS Change done - 2</label>
+    <label>iOS Change done - 3</label>
 
     <script>
       // Function to get URL parameters
@@ -60,6 +60,7 @@
           alert(`Param1: ${param}`);
         //   alert(`Param1: ${param1}\nParam2: ${param2}`);
           sendCallbackToApp(param1,param2)
+          console.log("sendCallbackToApp called with data: - btnclick");
       }
 
       // Initial setup
