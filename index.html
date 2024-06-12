@@ -16,6 +16,7 @@
             } else {
                 window.webkit.messageHandlers.callbackHandler.postMessage(param);
             }
+            console.log("sendCallbackToApp called with data:", data);
             window.webkit.messageHandlers.callbackHandler.postMessage(param);
         }
     </script>
@@ -34,7 +35,7 @@
     <div id="displayText"></div>
     <button id="actionButton">Click Me!</button>
     </br>
-    <label>iOS Change done - 1</label>
+    <label>iOS Change done - 2</label>
 
     <script>
       // Function to get URL parameters
